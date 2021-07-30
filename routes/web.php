@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/categories/create', 'CategoryController@create');
+Route::get('/categories/{category}', 'TodoController@index');
+Route::get('/categories/{category}/todos/create', 'TodoController@create');
+Route::delete('/categories/{category}/todos/{todo}', 'TodoController@destroy');
+Route::get('/categories/{category}/todos/{todo}','TodoController@show');
+Route::post('/categories/{category}/todos','TodoController@store');
